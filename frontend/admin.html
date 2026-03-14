@@ -1,0 +1,18 @@
+const ADMIN_TOKEN = 'supersecretadmintoken'; // same as in .env
+
+async function loadAdminProducts() {
+  const res = await fetch(`${BACKEND_URL}/api/admin/products`, {
+    headers: { 'x-admin-token': ADMIN_TOKEN }
+  });
+  const products = await res.json();
+  // ...
+}
+
+await fetch(`${BACKEND_URL}/api/admin/add-product`, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'x-admin-token': ADMIN_TOKEN
+  },
+  body: JSON.stringify(product)
+});
