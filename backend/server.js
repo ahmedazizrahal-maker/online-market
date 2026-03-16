@@ -45,6 +45,9 @@ app.get('/api/products', async (req, res) => {
   res.json(products);
 });
 
+const adminRoutes = require("./routes/admin");
+app.use("/api/admin", adminRoutes);
+
 // Create Stripe Checkout Session
 app.post('/api/create-checkout-session', async (req, res) => {
   try {
