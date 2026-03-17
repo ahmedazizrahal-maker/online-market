@@ -20,19 +20,13 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.error(err));
 
 
-const OrderSchema = new mongoose.Schema({
-  productId: String,
-  amount: Number,
-  status: String,
-  createdAt: { type: Date, default: Date.now }
-});
 
-const Product = mongoose.model("Product", ProductSchema);
-const Order = mongoose.model("Order", OrderSchema);
+
 // --------------------
-// 2. Products Schema
+// 2. Products Schema & Order Schema
 // --------------------
 const Product = require("./models/Product");
+const Order = require("./models/Order");
 // ----------------------
 // 3. API Routes
 // ----------------------
