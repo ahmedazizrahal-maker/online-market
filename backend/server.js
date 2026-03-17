@@ -29,7 +29,10 @@ const OrderSchema = new mongoose.Schema({
 
 const Product = mongoose.model("Product", ProductSchema);
 const Order = mongoose.model("Order", OrderSchema);
-
+// --------------------
+// 2. Products Schema
+// --------------------
+const Product = require("./models/Product");
 // ----------------------
 // 3. API Routes
 // ----------------------
