@@ -19,15 +19,6 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.error(err));
 
-// ----------------------
-// 2. Database Schemas
-// ----------------------
-const ProductSchema = new mongoose.Schema({
-  name: String,
-  price: Number, // in cents
-  description: String,
-  image: String
-});
 
 const OrderSchema = new mongoose.Schema({
   productId: String,
